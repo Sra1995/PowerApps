@@ -1,0 +1,12 @@
+default year
+Year(Now())
+
+default Day text
+{Value:Text(Today(),"dddd")}
+
+
+default time
+Text( Now(), "[$-en-US]hh:mm" )
+
+default month as text
+{Value:Text(Today(), "mmmm")}
