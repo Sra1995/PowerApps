@@ -13,3 +13,4 @@ List of Apps I created using powerApps:
 8. Interview tool ( an app to list candidate answers, share feedback about candidate, and track past, present, future candidates)
 9. Nurse leader Expectation - an app to track Unit Directors weekly tasks for higher managment 
 10. Shadow box Generator - an app that generator SVG box where you can manipulate the code using sliders to custmize the SVG box ( you can make squares and rectangles)
+11. Forensic Nursing - An app for SAFE unit to use as seperate private record from EPIC - This app consist of form that dynamically change based on values inputed and allows access to the datasource to make late adjustments
