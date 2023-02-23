@@ -1,0 +1,10 @@
+CollectFinding
+//*Switch(Dropdown1.Selected.Result, "-",CollectLocation,Distinct(Filter('Infection Control List',Finding=Dropdown1.Selected.Result),Location.Value))
+//*Switch(Dropdown1_1.Selected.Result, "-",CollectFinding,Distinct(Filter('Infection Control List',Location.Value=Dropdown1_1.Selected.Result),Finding))
+//*If(Dropdown1.Selected.Result ="-" || IsBlank(Dropdown1),CollectLocation,Distinct(Filter('Infection Control List',Finding=Dropdown1.Selected.Result),Location.Value))
+//*If(Dropdown1_1.Selected.Result = "-" || IsBlank(Dropdown1_1),CollectFinding,Distinct(Filter('Infection Control List',Location.Value = Dropdown1_1.Selected.Result),Finding))
+
+
+
+
+drop down options

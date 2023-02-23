@@ -1,0 +1,30 @@
+Patch(
+    'Employee Recognition',
+    Defaults('Employee Recognition'),
+    {
+        EmployeeName: {
+            '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+            Claims: "i:0#.f|membership|" & EmployeeNamevv.Selected.Email,
+            Department: EmployeeNamevv.Selected.Department,
+            DisplayName: EmployeeNamevv.Selected.DisplayName,
+            JobTitle: EmployeeNamevv.Selected.JobTitle,
+            Email: EmployeeNamevv.Selected.Email,
+            Picture: ""
+        },
+        Category: ddTitle.Selected,
+        Comment: Commentvv.Text
+    }
+)
+
+
+
+Patch(
+    'Employee Recognition',
+    Defaults('Employee Recognition'),
+    {'Employee Name':DataCardValue12.Selected.DisplayName,
+     Category: DataCardValue14.Selected.Value,
+     Comment: DataCardValue13.Text,
+     'Date & Time': DataCardValue11.Text,
+     'who submitted': DataCardValue10.Text
+    }
+)

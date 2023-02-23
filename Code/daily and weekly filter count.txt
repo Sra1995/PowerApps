@@ -1,0 +1,40 @@
+If(
+    Radio2.Selected.Value = "Daily",
+    CountRows(
+        With(
+            {
+                StartDate: Today(),
+                EndDate: Today()
+            },
+            Filter(
+                'Employee Recognition',
+                'Date & Time' >= StartDate,
+                'Date & Time' <= EndDate
+            )
+        )
+    ),
+    Radio2.Selected.Value = "weekly",
+    CountRows(
+        With(
+            {
+                StartDate: Today() - (Weekday(
+                    Today(),
+                    StartOfWeek.Sunday
+                )) + 1,
+                EndDate: DateAdd(
+                    Today(),
+                    (7 - Weekday(
+                        Today(),
+                        StartOfWeek.Sunday
+                    )),
+                    Days
+                )
+            },
+            Filter(
+                'Employee Recognition',
+                'Date & Time' >= StartDate,
+                'Date & Time' <= EndDate
+            )
+        )
+    )
+)

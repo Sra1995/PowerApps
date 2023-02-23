@@ -1,0 +1,11 @@
+Choices([@'Employee Recognition'].EmployeeName)
+
+
+
+Office365Users.SearchUser({searchTerm:DataCardValue3.SearchText})
+
+
+If(IsBlank(DataCardValue3) || IsBlank(DataCardValue4) || IsBlank(DataCardValue5),false,true)
+
+
+SubmitForm(EditForm1);ResetForm(EditForm1)

@@ -1,0 +1,58 @@
+Search(
+       If(
+// this is for all
+        DropdownFinding.Selected.Result = "-" And DropdownLocation.Selected.Result = "-" And DropdownStatus.Selected.Result = "-",
+        'Infection Control List',
+//Just one filter
+//This is for selected Finding and all location and status
+        DropdownFinding.Selected.Result <> "-" And DropdownLocation.Selected.Result = "-" And DropdownStatus.Selected.Result = "-",
+        Filter(
+            'Infection Control List',
+            Finding = DropdownFinding.Selected.Result
+        ),
+// This is for selected Location and all
+        DropdownFinding.Selected.Result = "-" And DropdownLocation.Selected.Result <> "-" And DropdownStatus.Selected.Result = "-",
+        Filter(
+            'Infection Control List',
+            Location = DropdownLocation.Selected.Result
+        ),
+// This is for selected Location and all
+        DropdownFinding.Selected.Result = "-" And DropdownLocation.Selected.Result = "-" And DropdownStatus.Selected.Result <> "-",
+        Filter(
+            'Infection Control List',
+            Status.Value = DropdownLocation.Selected.Result
+        ),
+//-------------------------------------------------------
+// This is two filters
+// This is for selected Finding and location and all Status
+        DropdownFinding.Selected.Result <> "-" And DropdownLocation.Selected.Result <> "-" And DropdownStatus.Selected.Result = "-",
+        Filter(
+            'Infection Control List',
+            Finding = DropdownFinding.Selected.Result And Location = DropdownLocation.Selected.Result
+        ),
+// This is for selected location and status and all
+        DropdownFinding.Selected.Result = "-" And DropdownLocation.Selected.Result <> "-" And DropdownStatus.Selected.Result <> "-",
+        Filter(
+            'Infection Control List',
+            Location = DropdownFinding.Selected.Result And Status.Value = DropdownLocation.Selected.Result
+        ),
+// This is for selected Finding and selected Status
+        DropdownFinding.Selected.Result <> "-" And DropdownLocation.Selected.Result = "-" And DropdownStatus.Selected.Result <> "-",
+        Filter(
+            'Infection Control List',
+            Finding = DropdownFinding.Selected.Result And Status.Value = DropdownLocation.Selected.Result
+        ),
+//----------------------------------------------------------
+//This is 3 filters
+        DropdownFinding.Selected.Result <> "-" And DropdownLocation.Selected.Result <> "-" And DropdownStatus.Selected.Result <> "-",
+        Filter(
+            'Infection Control List',
+            Finding = DropdownLocation.Selected.Result,
+            Location = DropdownLocation.Selected.Result,
+            Status.Value = DropdownLocation.Selected.Result
+        )
+    ),
+    TextSearchBox1.Text,
+    "Finding",
+    "Issue description"
+)
