@@ -1,0 +1,33 @@
+Switch(
+    true,
+    Hour(Now()) >= 3 && Hour(Now()) < 7,
+    {
+        Id: 6,
+        Value: "3a-7a"
+    },
+    Hour(Now()) >= 7 && Hour(Now()) < 11,
+    {
+        Id: 1,
+        Value: "7a-11a"
+    },
+    Hour(Now()) >= 11 And Hour(Now()) < 15,
+    {
+        Id: 2,
+        Value: "11a-3p"
+    },
+    Hour(Now()) >= 15 && Hour(Now()) < 19,
+    {
+        Id: 3,
+        Value: "3p-7p"
+    },
+    Hour(Now()) >= 19 And Hour(Now()) < 23,
+    {
+        Id: 4,
+        Value: "7p-11p"
+    },
+    Hour(Now()) >= 23 And Hour(Now()) < 3,
+    {
+        Id: 5,
+        Value: "11p-3a"
+    }
+)
